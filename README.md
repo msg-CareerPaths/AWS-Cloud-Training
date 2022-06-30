@@ -14,9 +14,9 @@
 
 ## Working Mode
 
-The road-map consists of several steps. In each step, a set of theoretical concepts are explored, supported by reference documentation, book chapters, tutorials and videos. In parallel, a simple application will be built with the learned concepts in the [AWS-CDK](#aws-cdk) chapter.
+The road-map consists of several steps. In each step, a set of theoretical concepts are explored, supported by reference documentation, book chapters, tutorials and videos. After the completion of the theoretical part, a small *infrastructure-as-code* application will be built with the learned concepts in the [AWS-CDK](#aws-cdk) chapter.
 
-All the code written must be published on GitHub. Access the [this link](https://classroom.github.com/a/5j3Nt96U) to create your own repository. In order to request a code review from the trainers, you must open a pull request from the develop to the master branch.
+All the code written in the [AWS-CDK](#aws-cdk) chapter must be published on GitHub. Access the [this link](https://classroom.github.com/a/5j3Nt96U) to create your own repository. In order to request a code review from the trainers, you must open a pull request from the develop to the master branch.
 
 ## Environment
 
@@ -36,7 +36,7 @@ You will need to have [NodeJs](https://nodejs.org/en/) installed and also for de
 
 Install AWS CLI: 
 
-Follow the steps: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html. 
+Follow these steps: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html. 
 
 After installing the AWS CLI run the following command to setup your credentials (for the account used to deploy the final project you'll recive the Access key ID and the Secret Access Key from the account administrator):
 ```
@@ -52,7 +52,7 @@ Install AWS CDK:
 Install the AWS CDK Toolkit globally using the following Node Package Manager command.
 
     npm install -g aws-cdk
-    
+
 Run the following command to verify correct installation and print the version number of the AWS CDK.
 
     cdk --version
@@ -60,8 +60,13 @@ Run the following command to verify correct installation and print the version n
 
 ## Docker
 
--tbd
+Follow the official docker "Get Started" tutorial [here](https://docs.docker.com/get-started/#start-the-tutorial)
 
+    Ignore "The Docker Dashboard" in the tutorial as it is part of Docker Desktop which requires a license and we are not using it. We will be using Docker on WSL.
+
+Videos with basic Docker tutorials: 
+- [https://www.youtube.com/watch?v=d-PPOS-VsC8](https://www.youtube.com/watch?v=d-PPOS-VsC8)
+- [https://www.youtube.com/watch?v=WcQ3-M4-jik](https://www.youtube.com/watch?v=WcQ3-M4-jik)
 ## AWS
 
 -tbd

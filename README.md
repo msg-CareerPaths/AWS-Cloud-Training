@@ -5,6 +5,7 @@
  - [Working Mode](#working-mode)
  - [Environment](#environment)
  - [Docker](#docker)
+ - [AWS Global Infrastructure](#aws-global-infrastructure)
  - [AWS Services](#aws-services)
  - [1. VPC](#1-vpc)
  - [2. EC2](#2-ec2)
@@ -81,7 +82,7 @@ There are also data centers outside AWS regions and availability zones. These lo
 
 Learn more:
 
-[AWS Global Cloud Infrastructure [video]](https://www.youtube.com/watch?v=RPis5mbM8c8)
+- [AWS Global Cloud Infrastructure [video]](https://www.youtube.com/watch?v=RPis5mbM8c8)
 
 ## AWS Services
 
@@ -111,7 +112,7 @@ Lastly, subnets can be configurated with **NACL** (**N**etwork **A**ccess **C**o
 
 Learn more:
 
-[AWS VPC & Subnets [video]](https://www.youtube.com/watch?v=bGDMeD6kOz0&t=353s)
+- [AWS VPC & Subnets [video]](https://www.youtube.com/watch?v=bGDMeD6kOz0&t=353s)
 
 ## 2. EC2
 
@@ -164,39 +165,39 @@ The **Elastic Load Balancer** is responsible for distributing the incoming traff
 
 The **Application Load Balancer** is particularly useful for websites and mobile apps. It has the following components:
 
-- **load balancer**
+- **Load Balancer**
 
     A load balancer serves as a single point of contact for all end-users.
 
-- **listener**
+- **Listener**
 
     Listeners check for end-user connection requests using the configured protocol and port. 
     
     The **rules** of a listener determine how the load balancer routes requests to its registered targets. Each rule consists of a priority, one or more actions, and one or more conditions. When a rule conditions are met, its actions are performed.
 
-- **target group**
+- **Target Group**
 
     Target group route requests to one or more registered targets (e.g. EC2 instances) using the configured protocol and port. 
     
     Target groups allow configuring **health checks**. These checks are performed on all targets registered to a target group.
 
-The way these components work together is the following. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply. It then selects a target from the target group for the rule action.
+The way these components work together is the following. After the **load balancer** receives a request, it evaluates the **listener rules** in priority order to determine which rule to apply. It then selects a target from the **target group** for the rule action.
 
 Learn more:
 
-[What is Amazon EC2?](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+- [What is Amazon EC2?](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
 
-[How to Create EC2 Instance in AWS Console [video]](https://www.youtube.com/watch?v=rIi8Pd5Uvbc)
+- [How to Create EC2 Instance in AWS Console [video]](https://www.youtube.com/watch?v=rIi8Pd5Uvbc)
 
-[EC2 Autoscaling: The Basics and 4 Best Practices](https://spot.io/resources/aws-autoscaling/ec2-autoscaling-the-basics-and-4-best-practices/)
+- [EC2 Autoscaling: The Basics and 4 Best Practices](https://spot.io/resources/aws-autoscaling/ec2-autoscaling-the-basics-and-4-best-practices/)
 
-[AWS - Auto Scaling group with demo [video]](https://www.youtube.com/watch?v=JM1hfA9xBAc)
+- [AWS - Auto Scaling group with demo [video]](https://www.youtube.com/watch?v=JM1hfA9xBAc)
 
-[What is an Application Load Balancer? (section 1 and 2)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
+- [What is an Application Load Balancer? (section 1 and 2)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
 
-[Create an Application Load Balancer (ALB) in AWS [video]](https://www.youtube.com/watch?v=ZGGpEwThhrM)
+- [Create an Application Load Balancer (ALB) in AWS [video]](https://www.youtube.com/watch?v=ZGGpEwThhrM)
 
-[Configuring Auto Scaling Group with ELB Elastic Load Balancer [video]](https://www.youtube.com/watch?v=aOAqH48Cyc8&t=537s)
+- [Configuring Auto Scaling Group with ELB Elastic Load Balancer [video]](https://www.youtube.com/watch?v=aOAqH48Cyc8&t=537s)
 
 ## 3. ECS
 
@@ -204,7 +205,7 @@ Learn more:
 
 ECS has several components:
 
-- **Task definition**
+- **Task Definition**
 
     A task definition is a blueprint that describes how a Docker container should launch. It is written in JSON format and contains settings like exposed port, Docker image, CPU shares, memory requirement, the command to run, and environmental variables.
 
@@ -226,7 +227,7 @@ ECS has several components:
     
     Containers are created from a read-only template called **image**. Images are typically built from a Dockerfile. 
 
-- **Container agent**
+- **Container Agent**
 
     A container agent is a software tool that runs on each container instance in an Amazon ECS cluster. It sends information about currently running tasks, and resource utilization, to Amazon ECS. The container agent can also start and stop tasks when needed.
 
@@ -234,11 +235,11 @@ The way that these components communicate with each other is the following. The 
 
 Learn more:
 
-[Amazon ECS components](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/welcome-features.html)
+- [Amazon ECS components](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/welcome-features.html)
 
-[An Overview of AWS Elastic Container Service (ECS) [video]](https://www.youtube.com/watch?v=I9VAMGEjW-Q)
+- [An Overview of AWS Elastic Container Service (ECS) [video]](https://www.youtube.com/watch?v=I9VAMGEjW-Q)
 
-[How AWS ECS Works a Gentle Introduction [video]](https://www.youtube.com/watch?v=P2gGjvM8liU)
+- [How AWS ECS Works a Gentle Introduction [video]](https://www.youtube.com/watch?v=P2gGjvM8liU)
 
 ## 4. RDS
 
@@ -280,17 +281,17 @@ An RDS instance has the following features:
 
 Learn more:
 
-[What is Amazon Relational Database Service (Amazon RDS)?](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
+- [What is Amazon Relational Database Service (Amazon RDS)?](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
 
-[AWS RDS MySQL Database Setup | Step by Step Tutorial [video]](https://www.youtube.com/watch?v=Ng_zi11N4_c)
+- [AWS RDS MySQL Database Setup | Step by Step Tutorial [video]](https://www.youtube.com/watch?v=Ng_zi11N4_c)
 
 ## 5. S3
 
 **S3** (**S**imple **S**torage **S**ervice) is an object storage service in the AWS Cloud. It is designed to store **objects** (e.g. profiles, logs, documents, etc.) in containers called **buckets**. 
 
-A bucket is a globally unique internet container. It has a unique URL and a **unique global name**. It is recommended that each bucket be used for a single-use case (e.g. one bucket for user files, another bucket for backups, and so on). S3 can store any type of file and provides **unlimited storage capacity**.
+A bucket is a globally unique internet container. It has a unique URL and a unique global name. It is recommended that each bucket be used for a single-use case (e.g. one bucket for user files, another bucket for backups, and so on). S3 can store any type of file and provides unlimited storage capacity.
 
-Theoretically, S3 is just a **key-value** storage system. The key is the complete path to the object, and the value is the object itself. On the same idea, the objects can not be partially changed. The whole object must be replaced if somebody needs a small change.
+Theoretically, S3 is just a key-value storage system. The key is the complete path to the object, and the value is the object itself. On the same idea, the objects can not be partially changed. The whole object must be replaced if somebody needs a small change.
 
 Uploading/reading files to/from S3 is usually done using the SDK or the REST API (SDK is recommended). All operations work through HTTP(S) requests (e.g. reading a file performs a GET request internally).
 
@@ -298,7 +299,7 @@ Amazon S3 offers additional features for buckets and objects:
 
 - security
 
-    Security can be at the bucket level or at the individual object level. We can configure **bucket policies**, **access point policies**, and **network access control lists (ACLs)**. 
+    Security can be at the bucket level or at the individual object level. We can configure bucket policies, access point policies, and network access control lists (ACLs). 
 
 - versioning
 
@@ -314,13 +315,13 @@ Amazon S3 offers additional features for buckets and objects:
 
 - replication
 
-    A bucket is created **inside a region** and is replicated across servers. Optionally, a bucket can be replicated across multiple regions to ensure durability and availability.
+    A bucket is created inside a region and is replicated across servers. Optionally, a bucket can be replicated across multiple regions to ensure durability and availability.
 
 Learn more:
 
-[What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 
-[Getting started with Amazon S3 - Demo [video]](https://www.youtube.com/watch?v=e6w9LwZJFIA)
+- [Getting started with Amazon S3 - Demo [video]](https://www.youtube.com/watch?v=e6w9LwZJFIA)
 
 ## AWS-CDK
 

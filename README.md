@@ -8,12 +8,13 @@
  - [AWS Global Infrastructure](#aws-global-infrastructure)
  - [AWS Services](#aws-services)
  - [AWS Management Console](#aws-management-console)
- - [1. VPC](#1-vpc)
- - [2. EC2](#2-ec2)
- - [3. ECS](#3-ecs)
- - [4. RDS](#4-rds)
- - [5. S3](#5-s3)
- - [6. Infrastructure-As-Code](#6-Infrastructure-As-Code)
+ - [1. IAM](#1-iam)
+ - [2. VPC](#2-vpc)
+ - [3. EC2](#3-ec2)
+ - [4. ECS](#4-ecs)
+ - [5. RDS](#5-rds)
+ - [6. S3](#6-s3)
+ - [7. Infrastructure-As-Code](#7-infrastructure-as-code)
  - [AWS-CDK](#aws-cdk)
 
 ## Working Mode
@@ -110,7 +111,71 @@ Learn more:
 
 - [Getting Started with the AWS Management Console](https://aws.amazon.com/getting-started/hands-on/getting-started-with-aws-management-console/?pg=gs&sec=gtkaws)
 
-## 1. VPC
+## 1. IAM
+
+**(IAM)** (**I**dentity and **A**ccess **M**anagement) is the web service that securely controls the access to AWS resources. IAM defines **who** can perform actions in the AWS account (authentication) and **who** has access to **what** resource (authorization).
+
+IAM identities:
+
+- **Users** 
+
+    There are two types of users:
+
+    - root user
+        
+        This user is generated when you first create an AWS account. It is used to close the account, change the account email address, or modify the support plan.
+
+    - individual users
+    
+        These users are persons or applications needing to access AWS resources. They can perform administrative tasks, access application code, configurations, etc.
+    
+    IAM users can be used both for signing in to the AWS Console and for programmatic sign-in to the AWS CLI or AWS API. The programmatic sign-in requests some special credentials called **access keys**.
+
+    Access keys consist of two parts: an access key ID (for example, AKIAIOSFODNN7EXAMPLE) and a secret access key (for example, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY). These are like a user name and password and they must be used together to authenticate the requests. 
+
+- **Groups**
+
+    Groups are a collection of IAM users. It is used to apply common access controls to all members. The access is controlled through policies and roles. Examples of possible IAM groups are _developers group_ or _project managers group_.
+
+- **Roles**
+
+    Roles are similar to IAM users and allows defining policies for accessing the AWS resources and services. The differences between roles and users are:
+
+    - a role does not have any credentials (password or access keys)
+    - a role can be assumed by any IAM user when needed (for example, a user needs temporary  permissions to perform a specific task)
+    - a role can not belong to a group
+    - a role can be associated with AWS resources (for example, an EC2 instance can have a role attached to be able to access other resources such as S3 buckets, RDS database etc.)
+
+- **Policies**
+
+    Policies are documents that manage permissions for users, groups, and roles. Most policies are stored in AWS as JSON documents. All permissions are implicitly denied, and the most restrictive policy is applied.
+
+    A policy document contains the following:
+
+    - Version - e.g. *2012-10-17*
+    - Id (optional) - an identifier for the policy, e.g. *S3-Account-Permissions*
+    - Statement - one or more individual statements
+        
+        Statements consist of: 
+        
+        - Sid (optional) - an identifier for the statement, e.g. *1*
+        - Effect - whether the statement allows or denies access (*Allow* or *Deny*)
+        - Principal (required in only some circumstances) - the account/user/role to which this policy applied to, e.g. *arn:aws:iam:123456789012:root* (root user)
+        - Action - a list of actions this policy allows or denies, e.g. *s3:GetObject* (allows reading S3 bucket objects) or *s3:PutObject* (allows adding objects in S3 bucket) 
+        - Resource (required in only some circumstances) - a list of resources to which the actions applies to, e.g. *arn:aws:s3:::my-bucket/* *
+        - Condition (optional) - conditions for when this policy is in effect, e.g. *aws:MultiFactorAuthPresent: true*
+
+    AWS has several managed policies that cover most of the cases when you need a policy. However, you can write your own policy for your specific use case.
+
+    Policies can also appear in other circumstances, not only as policies assigned to IAM identities (known as **Identity-based policy**). Another important type of policy is **Resource-based policy**. The most common examples of resource-based policies are Amazon S3 bucket policies that grant permissions to the principal that is specified in the policy. 
+
+Learn more:
+
+- [IAM Identities (users, user groups, and roles)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html)
+- [Policies and permissions in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html)
+- [AWS IAM Core Concepts You NEED to Know [video]](https://www.youtube.com/watch?v=_ZCTvmaPgao)
+
+## 2. VPC
 
 **VPC** (**V**irtual **P**rivate **C**loud) is the AWS service (and also the name of the resulting resource) that isolates and protects the customer's infrastructure in the AWS Cloud. A VPC (as a resource) is an isolated section of the entire AWS Cloud Network. 
 
@@ -124,7 +189,7 @@ Learn more:
 
 - [AWS VPC & Subnets [video]](https://www.youtube.com/watch?v=bGDMeD6kOz0&t=353s)
 
-## 2. EC2
+## 3. EC2
 
 **EC2** (**E**lastic **C**ompute **C**loud) is the AWS service that allows running virtual servers (known as **instances**) in the Cloud.
 
@@ -209,7 +274,7 @@ Learn more:
 
 - [Configuring Auto Scaling Group with ELB Elastic Load Balancer [video]](https://www.youtube.com/watch?v=aOAqH48Cyc8&t=537s)
 
-## 3. ECS
+## 4. ECS
 
 **ECS** (**E**lastic **C**ontainer **S**ervice) is a highly scalable and high-performance container management service in the AWS Cloud. It supports Docker containers and allows to run, stop and manage applications. In simple words, ECS allows the automatic launch of containers (containing the application) in AWS Cloud, starting from a Docker image.
 
@@ -251,7 +316,7 @@ Learn more:
 
 - [How AWS ECS Works a Gentle Introduction [video]](https://www.youtube.com/watch?v=P2gGjvM8liU)
 
-## 4. RDS
+## 5. RDS
 
 **RDS** (**R**elational **D**atabase **S**ervice) is a managed service that makes it easy to set up, operate, and scale a relational database in the AWS Cloud. It supports the following database engines:
 
@@ -295,7 +360,7 @@ Learn more:
 
 - [AWS RDS MySQL Database Setup | Step by Step Tutorial [video]](https://www.youtube.com/watch?v=Ng_zi11N4_c)
 
-## 5. S3
+## 6. S3
 
 **S3** (**S**imple **S**torage **S**ervice) is an object storage service in the AWS Cloud. It is designed to store **objects** (e.g. profiles, logs, documents, etc.) in containers called **buckets**. 
 
@@ -333,7 +398,7 @@ Learn more:
 
 - [Getting started with Amazon S3 - Demo [video]](https://www.youtube.com/watch?v=e6w9LwZJFIA)
 
-## 6. Infrastructure-As-Code
+## 7. Infrastructure-As-Code
 
 A fundamental principle of DevOps is to treat infrastructure the same way developers treat code. Application code has a defined format and syntax. If the code is not written according to the rules of the programming language, applications cannot be created. Code is stored in a version management or source control system that logs a history of code development, changes, and bug fixes. When code is compiled or built into applications, we expect a consistent application to be created, and the build is repeatable and reliable.
 

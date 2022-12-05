@@ -21,7 +21,7 @@ Provisioning cloud applications can be a challenging process that requires you t
 ### Practical steps:
 0. Create a new AWS account
 1. Follow the CDK Typescript Workshop [here](https://cdkworkshop.com/)
-2. Create a new CDK app on your repository created with GitHub Classroom in the [Working mode](#working-mode) chapter following these steps:
+2. Create a new CDK app on your repository following these steps:
    ```
    Reminder: commit and push the code after each step bellow
    ```

@@ -1,4 +1,4 @@
-# Cloud Training: Resources
+# AWS Cloud Training: Resources
 
 ## Contents
 

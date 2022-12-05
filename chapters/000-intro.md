@@ -1,8 +1,8 @@
 ## Working Mode
 
-The road-map consists of several steps. In each step, a set of theoretical concepts are explored, supported by reference documentation, book chapters, tutorials and videos. After the completion of the theoretical part, a small *infrastructure-as-code* application will be built with the learned concepts in the [AWS-CDK](#aws-cdk) chapter.
+The road-map consists of several steps. In each step, a set of theoretical concepts are explored, supported by reference documentation, book chapters, tutorials and videos. After the completion of the theoretical part, a small *infrastructure-as-code* application will be built with the learned concepts in the [Infrastructure-As-Code](https://github.com/msg-CareerPaths/aws-cloud-training/blob/main/chapters/009-infrastructure-as-code.md) chapter.
 
-All the code written in the [AWS-CDK](#aws-cdk) chapter must be published on GitHub. Create your own repository. In order to request a code review from the trainers, you must open a pull request from the develop to the master branch.
+All the code written in the [Infrastructure-As-Code](https://github.com/msg-CareerPaths/aws-cloud-training/blob/main/chapters/009-infrastructure-as-code.md) chapter must be published on GitHub. Create your own repository. In order to request a code review from the trainers, you must open a pull request from the develop to the master branch.
 
 ## Environment
 

@@ -17,3 +17,21 @@ AWS offers following services to define Infrastructure as a code:
 
 The AWS Cloud Development Kit (AWS CDK) is an open-source software development framework to define your cloud application resources using familiar programming languages.
 Provisioning cloud applications can be a challenging process that requires you to perform manual actions, write custom scripts, maintain templates, or learn domain-specific languages. AWS CDK uses the familiarity and expressive power of programming languages for modeling your applications. It provides high-level components called constructs that preconfigure cloud resources with proven defaults, so you can build cloud applications with ease. AWS CDK provisions your resources in a safe, repeatable manner through AWS CloudFormation. It also allows you to compose and share your own custom constructs incorporating your organization's requirements, helping you expedite new projects.
+
+### Practical steps:
+0. Create a new AWS account
+1. Follow the CDK Typescript Workshop [here](https://cdkworkshop.com/)
+2. Create a new CDK app on your repository created with GitHub Classroom in the [Working mode](#working-mode) chapter following these steps:
+   ```
+   Reminder: commit and push the code after each step bellow
+   ```
+   1. Create a new CDK app
+   
+   2. Create a new stack consisting of a VPC and an EC2 instance on a public subnet. Using the ECS service, run the official nginx image [https://hub.docker.com/_/nginx](https://hub.docker.com/_/nginx)
+   ```
+   Make sure to choose the free instance type for the EC2: "AWS Free Tier includes 750 hours of Linux and Windows t2.micro instances, ( t3.micro for the regions in which t2.micro is unavailable) each month for one year. To stay within the Free Tier, use only EC2 Micro instances."
+
+   !!! Destroy the stack when not used to avoid costs.
+   ```
+   3. Add an S3 bucket to the existing stack. Configure the S3 bucket to enable static website hosting and public access.
+   To test the bucket upload a static website and try access the generate URL (could be the website from the frontend training or any other website)

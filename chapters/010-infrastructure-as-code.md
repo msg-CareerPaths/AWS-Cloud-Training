@@ -34,4 +34,4 @@ Provisioning cloud applications can be a challenging process that requires you t
    !!! Destroy the stack when not used to avoid costs.
    ```
    3. Add an S3 bucket to the existing stack. Configure the S3 bucket to enable static website hosting and public access.
-   To test the bucket upload a static website and try access the generate URL (could be the website from the frontend training or any other website)
+   To test the bucket, upload a static website and try to access the generated URL (could be the website from the frontend training or any other website).

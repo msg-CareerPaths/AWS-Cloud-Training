@@ -57,7 +57,7 @@ The **Application Load Balancer** is particularly useful for websites and mobile
 
     Listeners check for end-user connection requests using the configured protocol and port. 
     
-    The **rules** of a listener determine how the load balancer routes requests to its registered targets. Each rule consists of a priority, one or more actions, and one or more conditions. When a rule conditions are met, its actions are performed.
+    The **rules** of a listener determine how the load balancer routes requests to its registered targets. Each rule consists of a priority, one or more actions, and one or more conditions. When a rule condition is met, its actions are performed.
 
 - **Target Group**
 

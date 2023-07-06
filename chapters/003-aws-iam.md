@@ -1,6 +1,6 @@
 ## IAM
 
-**(IAM)** (**I**dentity and **A**ccess **M**anagement) is the web service that securely controls the access to AWS resources. IAM defines **who** can perform actions in the AWS account (authentication) and **who** has access to **what** resource (authorization).
+**IAM** (**I**dentity and **A**ccess **M**anagement) is the web service that securely controls the access to AWS resources. IAM defines **who** can perform actions in the AWS account (authentication) and **who** has access to **what** resource (authorization).
 
 IAM identities:
 

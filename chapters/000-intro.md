@@ -6,13 +6,6 @@ All the code written in the [Infrastructure-As-Code](https://github.com/msg-Care
 
 ## Environment
 
-### Setup Docker
-
-First you need to install Ubuntu on WSL (Windows Subsystem for Linux) following the steps from: 
-[https://docs.microsoft.com/en-us/windows/wsl/install](https://docs.microsoft.com/en-us/windows/wsl/install)
-
-After installing Ubuntu you need to install Docker without Docker Desktop. You can find the steps needed [here](https://medium.com/geekculture/run-docker-in-windows-10-11-wsl-without-docker-desktop-a2a7eb90556d).
-
 ### Setup AWS CLI and AWS CDK
 You will need to have [NodeJs](https://nodejs.org/en/) installed and also for developing the CDK App later I would recommend using [VSCode](https://code.visualstudio.com/).
 
